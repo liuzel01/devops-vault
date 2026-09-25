@@ -113,16 +113,16 @@ generated:
 4. 配置 PR 模板，至少要求说明：资料来源、生成方式、敏感信息检查结果、人工核验项、预期归档路径。
 5. 配置 GitHub Actions：Markdown 格式、断链、frontmatter、秘密扫描和变更范围检查。检查失败不得合并。
 6. 配置分支保护：`main` 至少需要通过 CI；review、wiki 和批量修改需要人工批准。Daily 可在后续依据质量数据决定是否降低审核级别。
-7. 本机以 `launchd` 或现有可靠调度器触发 OpenClaw；调度脚本只调用仓库内审计入口，不在 GitHub-hosted Runner 上执行本机 skill。
+7. Daily、Review 和 Wiki 只能由人工在 OpenClaw 会话中触发。`launchd` 或其他本机调度器仅可用于 Weekly Draft PR，且只能调用仓库内受限入口；不得在 GitHub-hosted Runner 上执行本机 skill。
 
 ### 触发模型
 
-首期采用**人工触发为默认、定时触发为补充**的混合模型。两种入口都只能调用同一个仓库内生成脚本，产物均创建独立分支和 PR，不能因入口不同绕过审核。
+首期采用**Daily/Review/Wiki 仅人工触发、Weekly 同时支持人工与定时触发**的模型。两种 Weekly 入口都只能调用同一个仓库内生成脚本，产物均创建独立分支和 PR，不能因入口不同绕过审核。
 
 ```mermaid
 flowchart TD
     manual[人工在 OpenClaw 会话中<br/>明确调用 daily / weekly / review skill] --> command[仓库内 generate-* 命令]
-    schedule[launchd 定时任务<br/>仅运行允许自动化的任务] --> command
+    schedule[launchd 定时任务<br/>仅生成已结束周的 Weekly Draft] --> command
     command --> dryrun{先执行 dry-run}
     dryrun -->|校验失败| stop[停止并输出可处理错误]
     dryrun -->|校验通过| branch[创建 agent/日期-主题 分支]
@@ -136,12 +136,12 @@ flowchart TD
 
 | 文档类型 | 首选触发方式 | `launchd` 是否允许 | 合并策略 |
 | --- | --- | --- | --- |
-| Daily | 人工触发；稳定后可定时生成草稿 | 可，按工作日固定时间 | 初期人工审核；质量稳定后再评估自动合并 |
-| Weekly | 人工触发，确认统计范围后执行 | 不建议自动生成正文；可定时创建待办提醒 | 必须人工审核 |
+| Daily | 人工在 OpenClaw 会话中触发 | 否 | 必须人工审核 |
+| Weekly | 人工触发，或定时生成上一完整周的 Draft PR | 可，每周一次 | 必须人工审核 |
 | Review / 复盘 | 人工在指定 OpenClaw 会话中触发 | 否 | 必须人工审核 |
 | Wiki 整理 | 人工触发，或第二期实验层处理后回写 | 否 | 必须人工审核 |
 
-`launchd` 的职责是**准时发起一个有限、幂等的本地任务**，例如“生成今天的 Daily 草稿并创建 Draft PR”；它不是常驻 Agent，也不应自行判断事故结论、写 Review 或批准合并。人工会话触发适用于需要补充上下文、选择资料来源或确认结论的任务。
+`launchd` 的职责是**准时发起一个有限、幂等的 Weekly Draft 任务**，例如“生成上一完整 ISO 周的周报草稿并创建 Draft PR”；它不是常驻 Agent，也不应自行判断 Daily、事故结论、写 Review 或批准合并。人工会话触发适用于需要补充上下文、选择资料来源或确认结论的任务。
 
 ### 首期验收标准
 
@@ -235,8 +235,8 @@ worker 必须是独立的受限服务账户：只可 clone 指定仓库、创建
 
 1. **仓库基线 PR**：目录、模板、`.gitignore`、贡献/数据分类文档。
 2. **校验 PR**：Markdown、链接、frontmatter、敏感信息扫描与 PR 模板。
-3. **Daily 自动化 PR**：本机 OpenClaw 包装脚本、dry-run、分支/PR 创建、`launchd` 示例配置（不携带任何真实 Token）。
-4. **Weekly/Review 自动化 PR**：复用同一输入输出契约，并强制人工审核。
+3. **Daily 人工生成 PR**：本机 OpenClaw 包装脚本、dry-run、分支/PR 创建；不提供定时任务。
+4. **Weekly/Review 自动化 PR**：复用同一输入输出契约；仅 Weekly 提供 `launchd` Draft PR 示例，所有产物强制人工审核。
 
 每个 PR 都要先在 `dry-run` 下打印拟写入路径、拟创建分支和校验结果；只有显式执行模式才允许创建本地分支或远端 PR。
 

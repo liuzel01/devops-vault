@@ -1,6 +1,6 @@
 # 本地 Daily 自动化
 
-Daily 生成由本机 OpenClaw 会话或 `launchd` 调用同一个脚本完成。脚本默认是 dry-run；只有显式传入 `--execute` 才会创建 Git 分支、写入文档并提交。
+Daily 生成只能由本机 OpenClaw 会话人工发起。脚本默认是 dry-run；只有显式传入 `--execute` 才会创建 Git 分支、写入文档并提交。
 
 ## 人工触发
 
@@ -18,11 +18,11 @@ node scripts/generate-daily.mjs --date 2026-09-25 --body-file /absolute/path/to/
 
 这会从干净的本地 `main` 创建 `agent/2026-09-25-daily`，写入 `daily/2026/09/2026-09-25.md`、运行校验并创建本地 commit。要推送分支，额外传入 `--push`；要创建 Draft PR，额外传入 `--push --create-pr`。后两项要求已完成 `gh auth login`。
 
-## 定时触发
+## 不支持定时触发
 
-`launchd` 仅适用于已稳定的“生成 Daily 草稿”任务。定时任务必须调用同一脚本，并将 `--execute`、`--push`、`--create-pr` 是否允许写得明确；初期建议只生成草稿、创建 Draft PR，绝不自动合并。
+Daily 是否需要生成取决于当天是否有值得沉淀的工作；因此本仓库不提供 Daily 的 `launchd` 任务。每次生成必须由人工在 OpenClaw 会话中确认来源、标签、结论和脱敏范围后发起。
 
-不要让定时任务自动生成 Weekly、Review、事故复盘或 Wiki 结论。这些任务必须通过人工 OpenClaw 会话补充上下文并确认资料范围。
+定时能力只适用于 Weekly 的 Draft PR，详见 `docs/launchd-weekly-adapter.md`。Review、事故复盘和 Wiki 结论也必须通过人工 OpenClaw 会话触发。
 
 ## 失败处理
 
