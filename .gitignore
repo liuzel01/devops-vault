@@ -1,0 +1,23 @@
+# Obsidian per-user state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# Local LLM Wiki / agent state and credentials
+.llm-wiki/
+agent-workspace/
+.env
+.env.*
+!.env.example
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Generated reports and temporary data
+.tmp/
+tmp/
+coverage/
