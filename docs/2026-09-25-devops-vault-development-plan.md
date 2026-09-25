@@ -151,6 +151,18 @@ flowchart TD
 - 本机 Obsidian 可直接打开仓库，且 `.obsidian/workspace*` 等个人状态不进入版本控制；
 - 失败的生成不会污染 `main`，可从分支/PR 安全重试。
 
+### 当前 GitHub 平台限制与补偿控制
+
+截至 2026-09-25，本仓库为私有仓库，当前 GitHub 套餐不支持分支保护 API；无法在 GitHub 上强制 required checks 或 PR review。仓库必须保持私有，不能为了获得该能力而公开运维知识。
+
+在升级到支持私有仓库分支保护的 GitHub 套餐、迁移到具备 Protected Branch 的 GitLab，或迁入具备相应策略的组织前，采用以下临时控制：
+
+1. Agent、定时任务和人工流程均约定禁止直接向 `main` push；
+2. 所有生成内容一律先创建 Draft PR，合并前人工查看 Actions 结果；
+3. `reviews/`、`wiki/` 和 `docs/` 由 `CODEOWNERS` 标识负责人，但该标识当前不具备强制力；
+4. 每次合并前核验 `Validate vault content` workflow 成功；
+5. 将直接写入 `main` 视为流程违规并在审计记录中说明原因。
+
 ### 非目标
 
 - 不在本期导入全部历史笔记；仅迁移已确认需要长期保留且完成分类的文档。
