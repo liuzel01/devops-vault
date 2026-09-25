@@ -1,0 +1,10 @@
+title = "devops-vault secret scanning configuration"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Documentation placeholders are not credentials"
+regexes = [
+  '''\{\{[A-Za-z_][A-Za-z0-9_]*\}\}''',
+]
