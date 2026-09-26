@@ -107,7 +107,7 @@ generated:
 1. 建立目录、模板、`.gitignore`、资料分类说明和贡献规范。
 2. 创建 `scripts/` 下的显式入口：
    - `generate-daily`：按模板生成当天草稿；
-   - `generate-weekly`：汇总已合并 Daily，生成周报草稿；
+   - `generate-weekly`：汇总目标周内已合并的 Daily 与 Review，生成周报草稿；
    - `generate-review`：以输入资料生成 Review 草稿；
    - `validate`：本地运行与 CI 等价的格式、链接、frontmatter、敏感内容检查。
 3. 为每次 Agent 生成创建独立分支，命名为 `agent/<yyyy-mm-dd>-<topic>`；禁止 Agent 向 `main` push。
