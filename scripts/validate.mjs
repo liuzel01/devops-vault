@@ -4,7 +4,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { relative, resolve, sep } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const requiredMetadataDirectories = new Set(['daily', 'weekly', 'reviews', 'wiki']);
+const requiredMetadataDirectories = new Set(['daily', 'weekly', 'reviews', 'sources', 'wiki']);
 const validStatuses = new Set(['draft', 'review', 'published', 'archived']);
 const errors = [];
 
@@ -56,6 +56,11 @@ function validateMetadata(path, content) {
   if (metadata.has('status') && !validStatuses.has(metadata.get('status'))) {
     errors.push(`${relativePath}: unsupported status '${metadata.get('status')}'`);
   }
+  if (relativePath.startsWith(`sources${sep}`)) {
+    for (const key of ['source_kind', 'redaction', 'reviewed_by']) {
+      if (!metadata.has(key) || !metadata.get(key)) errors.push(`${relativePath}: missing required source archive field '${key}'`);
+    }
+  }
   for (const key of ['created', 'updated']) {
     const value = metadata.get(key);
     if (value && !/^\d{4}-\d{2}-\d{2}$/.test(value)) errors.push(`${relativePath}: '${key}' must use YYYY-MM-DD`);
@@ -90,7 +95,7 @@ function validateSensitiveContent(path, content) {
   }
 }
 
-const files = ['README.md', ...listFiles('docs'), ...listFiles('daily'), ...listFiles('weekly'), ...listFiles('reviews'), ...listFiles('wiki')]
+const files = ['README.md', ...listFiles('docs'), ...listFiles('daily'), ...listFiles('weekly'), ...listFiles('reviews'), ...listFiles('sources'), ...listFiles('wiki')]
   .map((file) => resolve(root, file))
   .filter((file, index, all) => existsSync(file) && statSync(file).isFile() && all.indexOf(file) === index);
 
