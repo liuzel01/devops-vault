@@ -2,6 +2,8 @@
 
 Weekly、Review 和复盘不由 `launchd` 自动生成。必须由操作者在 OpenClaw 会话中确认资料范围、结论和脱敏要求，再将正文交给仓库脚本。
 
+从 OpenClaw 会话发起、确认、创建 Draft PR 和处理失败的完整步骤见 [OpenClaw 发布 Review Runbook](openclaw-review-publish-runbook.md)。
+
 ## Weekly
 
 先进行 dry-run：

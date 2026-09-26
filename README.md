@@ -4,11 +4,14 @@
 
 详细架构、三期计划和安全边界见 [开发计划](docs/2026-09-25-devops-vault-development-plan.md)。
 
+从 OpenClaw 发布团队 Review 的完整人工操作流程见 [OpenClaw 发布 Review Runbook](docs/openclaw-review-publish-runbook.md)。
+
 ## 目录
 
 - `daily/`：每日记录；
 - `weekly/`：周报；
 - `reviews/`：Review、复盘和专题结论；
+- `sources/`：凭证脱敏的完整 Review 源文档与证据链；
 - `wiki/`：稳定主题知识页；
 - `inbox/`：已脱敏、待加工资料；不视为正式知识；
 - `templates/`：正式文档模板；
@@ -22,4 +25,4 @@
 4. 创建 Draft PR，写明来源、生成方式和人工核验项。
 5. CI 通过并经人工审核后合并。
 
-不得提交密钥、Token、私钥、完整生产配置、客户数据或未经脱敏的运维原文。详见 [数据分类与贡献规范](docs/contributing-and-data-classification.md)。
+不得提交密码、Token、私钥、云访问密钥、Authorization 值、完整敏感请求载荷或客户数据。私有仓库可保存凭证脱敏后的完整运维源文档；详见 [数据分类与贡献规范](docs/contributing-and-data-classification.md)。
