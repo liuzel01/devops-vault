@@ -14,7 +14,7 @@ openclaw-weekly-adapter /private/var/folders/.../devops-vault-weekly.XXXXXX 2026
 
 适配器必须调用已批准的 OpenClaw Weekly skill，仅将脱敏后的 Markdown 正文写入输出路径，并以非零退出码报告失败。它不得修改仓库、创建分支、提交、推送或输出凭据；这些均由仓库脚本在检查干净 `main`、同步远端后完成。
 
-已批准的实现位于已部署 skill 的 `scripts/openclaw-weekly-adapter.mjs`。它只把目标 ISO 周中已合并的 `daily/YYYY/MM/YYYY-MM-DD.md` 作为输入；没有 Daily 来源时会退出，因而不会创建没有证据的 Weekly Draft PR。
+已批准的实现位于已部署 skill 的 `scripts/openclaw-weekly-adapter.mjs`。它只把目标 ISO 周中已合并的 `daily/YYYY/MM/YYYY-MM-DD.md` 与 `reviews/YYYY/YYYY-MM-DD-*.md` 作为输入；没有任何来源时会退出，因而不会创建没有证据的 Weekly Draft PR。本机未合并的文档不会被调度器读取。
 
 ## 安装前检查
 
@@ -28,7 +28,7 @@ DEVOPS_VAULT_NODE=/Users/liuzelin/.nvm/versions/node/v22.22.3/bin/node \
 /bin/zsh scripts/run-scheduled-weekly.zsh --dry-run
 ```
 
-4. 在有已合并 Daily 的周，单独验证适配器输出非空、已脱敏且不修改仓库；没有 Daily 的周应以非零退出码停止。
+4. 在有已合并 Daily 或 Review 的周，单独验证适配器输出非空、已脱敏且不修改仓库；没有任何来源的周应以非零退出码停止。
 5. 预览安装：
 
 ```bash
