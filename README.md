@@ -6,6 +6,8 @@
 
 从 OpenClaw 发布团队 Review 的完整人工操作流程见 [OpenClaw 发布 Review Runbook](docs/openclaw-review-publish-runbook.md)。
 
+可选的 Weekly `launchd` Draft PR 调度见 [Weekly launchd 适配器](docs/launchd-weekly-adapter.md)；Daily、Review 与 Wiki 不可定时生成。
+
 ## 目录
 
 - `daily/`：每日记录；
