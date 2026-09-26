@@ -50,7 +50,7 @@ flowchart TD
 | --- | --- | --- |
 | 个人资料 | 独立私有 Vault 或本机受控目录 | 不自动进入团队仓库 |
 | 团队可共享资料 | 本仓库 | 允许协作、PR 和文档站发布 |
-| 敏感运维资料 | 受控系统/对象存储/密钥系统 | Git 中仅留脱敏摘要或引用；不得提交密钥、Token、私钥、完整生产配置、客户数据 |
+| 敏感运维资料 | 私有 Vault；凭证材料仍存受控密钥系统 | 允许提交凭证脱敏后的完整 Review 源文档；不得提交密钥、Token、私钥、密码、Authorization 值、完整敏感请求载荷或客户数据 |
 
 所有 AI 外发前必须执行脱敏和数据边界检查；生成记录保存模型/skill 版本和来源，但不能将密钥或完整敏感 prompt 写入 Git、Issue、PR 描述或日志。
 
@@ -62,7 +62,8 @@ flowchart TD
 devops-vault/
 ├── README.md
 ├── docs/                         # 架构、流程、开发计划
-├── inbox/                        # 已脱敏、待加工的输入；不作为正式知识
+├── inbox/                        # 待加工的凭证脱敏输入；不作为正式知识
+├── sources/                      # 凭证脱敏的完整 Review 源文档与证据链
 ├── daily/YYYY/MM/YYYY-MM-DD.md   # 每日记录
 ├── weekly/YYYY/YYYY-Www.md       # 周报
 ├── reviews/YYYY/YYYY-MM-DD-*.md  # Review、复盘、专题结论
@@ -91,7 +92,7 @@ generated:
   reviewed_by: null
 ```
 
-`generated` 不是强制 AI 标记；纯人工页面可省略。`sources` 用仓库内相对路径、外部稳定链接或脱敏后的工单/事件引用，避免复制敏感原文。
+`generated` 不是强制 AI 标记；纯人工页面可省略。`sources` 用仓库内相对路径、外部稳定链接或凭证脱敏后的工单/事件/Review 源文档引用。私有 Vault 是团队维护的单一事实来源，但不得复制认证材料。
 
 ## 4. 三期实施计划
 
