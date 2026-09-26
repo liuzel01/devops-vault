@@ -27,13 +27,16 @@ plutil -lint "$PLIST_SOURCE" >/dev/null || fail "plist example is invalid"
 
 GENERATOR=$( /usr/libexec/PlistBuddy -c 'Print :EnvironmentVariables:DEVOPS_VAULT_WEEKLY_GENERATOR' "$PLIST_SOURCE" )
 OPENCLAW_BIN=$( /usr/libexec/PlistBuddy -c 'Print :EnvironmentVariables:DEVOPS_VAULT_OPENCLAW_BIN' "$PLIST_SOURCE" )
+SCHEDULE_PATH=$( /usr/libexec/PlistBuddy -c 'Print :EnvironmentVariables:PATH' "$PLIST_SOURCE" )
 [[ -x "$GENERATOR" ]] || fail "Weekly generator is not executable: $GENERATOR"
 [[ -x "$OPENCLAW_BIN" ]] || fail "OpenClaw executable is not executable: $OPENCLAW_BIN"
+env PATH="$SCHEDULE_PATH" /bin/zsh -c 'command -v gh >/dev/null' || fail "LaunchAgent PATH cannot resolve gh"
 
 print -- "LaunchAgent source: $PLIST_SOURCE"
 print -- "LaunchAgent target: $PLIST_DESTINATION"
 print -- "Weekly generator: $GENERATOR"
 print -- "OpenClaw executable: $OPENCLAW_BIN"
+print -- "LaunchAgent PATH: $SCHEDULE_PATH"
 
 if [[ "$INSTALL" != true ]]; then
   print -- "Dry-run only. Re-run with --install to install and bootstrap $LABEL."

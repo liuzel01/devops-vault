@@ -18,7 +18,7 @@ openclaw-weekly-adapter /private/var/folders/.../devops-vault-weekly.XXXXXX 2026
 
 ## 安装前检查
 
-1. 确认 `devops-vault-publish` skill 已部署，且 plist 中的 `DEVOPS_VAULT_WEEKLY_GENERATOR` 与 `DEVOPS_VAULT_OPENCLAW_BIN` 都是可执行的绝对路径。
+1. 确认 `devops-vault-publish` skill 已部署，且 plist 中的 `DEVOPS_VAULT_WEEKLY_GENERATOR` 与 `DEVOPS_VAULT_OPENCLAW_BIN` 都是可执行的绝对路径；`PATH` 必须能解析 `gh`，因为 LaunchAgent 不会加载交互式 shell 的 Homebrew 配置。
 2. 完成 `gh auth login`；未登录时任务会停止，不会创建不可审核的远端变更。
 3. 先运行 dry-run：
 
