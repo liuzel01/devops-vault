@@ -7,7 +7,7 @@
 1. 在人工 Daily/Review/Wiki 请求中收集来源、标签、脱敏确认和目标文档类型；
 2. 调用仓库的 `generate-daily.mjs`、`generate-review.mjs` 或 `generate-weekly.mjs`，先执行 dry-run；
 3. 仅在用户明确确认后传入 `--execute`，并在需要时由已登录的 GitHub CLI 创建 Draft PR；
-4. 对定时 Weekly，仅实现“将上一完整周的已合并 Daily 汇总为 Markdown 正文”的适配器契约；
+4. 对定时 Weekly，仅实现“将上一完整周的已合并 Daily 与 Review 汇总为 Markdown 正文”的适配器契约；
 5. 绝不直写 `main`、自动合并、向 Git/PR/日志写入密钥或未经脱敏的来源。
 
 在该 skill 创建前，仍可人工在现有 OpenClaw 会话中生成正文，并按 `docs/local-daily-automation.md`、`docs/manual-weekly-and-review-generation.md` 调用脚本。
