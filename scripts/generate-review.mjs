@@ -16,6 +16,7 @@ Options:
   --slug SLUG         Lowercase URL-safe document suffix (required)
   --date YYYY-MM-DD   Creation date (default: local today)
   --owner NAME        Frontmatter owner (default: local Git user.name)
+  --source TEXT       Sanitized source reference stored in frontmatter
   --body-file PATH    Markdown body supplied by a reviewed OpenClaw skill output
   --execute           Create a local agent branch, write the review, validate, and commit
   --push              Push the generated branch; requires --execute
@@ -45,14 +46,14 @@ function assertDate(value) {
 }
 
 function parseArgs(args) {
-  const parsed = { execute: false, push: false, createPr: false, title: null, slug: null, date: null, owner: null, bodyFile: null };
+  const parsed = { execute: false, push: false, createPr: false, title: null, slug: null, date: null, owner: null, source: null, bodyFile: null };
   for (let index = 0; index < args.length; index += 1) {
     const value = args[index];
     if (value === '--help') return { help: true };
     if (value === '--execute') parsed.execute = true;
     else if (value === '--push') parsed.push = true;
     else if (value === '--create-pr') parsed.createPr = true;
-    else if (['--title', '--slug', '--date', '--owner', '--body-file'].includes(value)) {
+    else if (['--title', '--slug', '--date', '--owner', '--source', '--body-file'].includes(value)) {
       const optionValue = args[index + 1];
       if (!optionValue || optionValue.startsWith('--')) throw new Error(`${value} requires a value`);
       parsed[value.slice(2).replace(/-([a-z])/g, (_, char) => char.toUpperCase())] = optionValue;
@@ -100,8 +101,14 @@ try {
   const template = readFileSync(resolve(root, 'templates/review.md'), 'utf8');
   mkdirSync(resolve(root, `reviews/${year}`), { recursive: true });
   run('git', ['switch', '-c', branch]);
-  const document = template.replaceAll('{{title}}', options.title).replaceAll('{{date}}', date).replaceAll('{{owner}}', owner);
-  writeFileSync(outputPath, body.trim() ? `${document.trimEnd()}\n\n${body.trim()}\n` : document, 'utf8');
+  const defaultBody = ['## 背景与范围', '', '## 结论', '', '## 证据与来源', '', '## 风险与后续行动'].join('\n');
+  const document = template
+    .replaceAll('{{title}}', options.title)
+    .replaceAll('{{date}}', date)
+    .replaceAll('{{owner}}', owner)
+    .replace('{{sources}}', options.source ? JSON.stringify([options.source]) : '[]')
+    .replace('{{body}}', body.trim() || defaultBody);
+  writeFileSync(outputPath, `${document.trimEnd()}\n`, 'utf8');
   run('node', ['scripts/validate.mjs'], { stdio: 'inherit' });
   run('git', ['add', relativePath]);
   run('git', ['commit', '-m', `docs: add review ${options.slug}`], { stdio: 'inherit' });

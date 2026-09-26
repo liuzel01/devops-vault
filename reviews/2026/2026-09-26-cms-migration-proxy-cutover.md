@@ -4,7 +4,7 @@ created: 2026-09-26
 updated: 2026-09-26
 status: draft
 owners: [liuzel01]
-sources: []
+sources: ["OpenClaw workspace review: 2026-09-21-mgbx-cms-egress-proxy-ec2-review.md"]
 generated:
   tool: openclaw
   skill: review
@@ -13,14 +13,6 @@ generated:
 ---
 
 # Review - CMS migration proxy cutover review
-
-## 背景与范围
-
-## 结论
-
-## 证据与来源
-
-## 风险与后续行动
 
 ## 背景与范围
 
