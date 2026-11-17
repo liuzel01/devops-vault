@@ -1,5 +1,7 @@
 # DevOps Vault：Git 托管与自动化开发计划
 
+> **已归档：** 本文描述的 OpenClaw/launchd 方案已于 2026-11-17 停用，仅保留用于历史追溯。当前方案见 [Quartz 发布实施计划](../2026-11-11-devops-vault-quartz-migration-plan.md)。
+
 ## 1. 背景与目标
 
 当前本地工作流为 OpenClaw skills 生成 review、日报、周报等 Markdown，再由 Obsidian 管理 daily、weekly、wiki 等资料。它已经能服务个人知识沉淀，但存在以下不足：

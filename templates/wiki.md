@@ -2,9 +2,16 @@
 title: {{title}}
 created: {{date}}
 updated: {{date}}
+type: wiki
 status: draft
+publish: false
+tags: []
 owners: [{{owner}}]
 sources: []
+generated:
+  tool: code-agent
+  model: null
+  reviewed_by: null
 ---
 
 # {{title}}

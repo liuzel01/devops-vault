@@ -5,8 +5,8 @@
 ## 资料来源与生成方式
 
 - 来源：
-- 生成方式：人工 / OpenClaw skill / 其他
-- 使用的 skill、模型或版本（如适用）：
+- 生成方式：人工 / Codex / Code Agent / 其他
+- 使用的工具、模型或版本（如适用）：
 
 ## 人工核验
 
@@ -14,6 +14,7 @@
 - [ ] 已移除密钥、Token、个人数据及未经脱敏的生产信息
 - [ ] 已运行 `node scripts/validate.mjs`
 - [ ] 已确认目标归档路径和文档状态
+- [ ] 如需网站发布，已确认 `status: published` 与 `publish: true`
 
 ## 风险或待确认事项
 

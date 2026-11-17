@@ -1,5 +1,7 @@
 # launchd Weekly 适配器
 
+> **已归档：** 本定时流程已于 2026-11-17 停用，相关脚本和 LaunchAgent 示例已删除，不应继续执行。
+
 本仓库提供 Weekly 的可选定时 Draft PR 入口：`automation/launchd/com.liuzel01.devops-vault.weekly.plist.example`、`automation/launchd/install-weekly.zsh` 和 `scripts/run-scheduled-weekly.zsh`。它每周一 09:10 生成上一完整 ISO 周的周报草稿；绝不自动合并。
 
 Daily、Review、事故复盘与 Wiki 没有也不得安装定时任务，必须由人工在 OpenClaw 会话中确认上下文后触发。

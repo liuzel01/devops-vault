@@ -2,13 +2,15 @@
 title: Daily - {{date}}
 created: {{date}}
 updated: {{date}}
+type: daily
 status: draft
+publish: false
+tags: []
 owners: [{{owner}}]
 sources: []
 generated:
-  tool: openclaw
-  skill: daily
-  skill_version: null
+  tool: code-agent
+  model: null
   reviewed_by: null
 ---
 

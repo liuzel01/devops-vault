@@ -2,13 +2,15 @@
 title: Weekly - {{week}}
 created: {{date}}
 updated: {{date}}
+type: weekly
 status: draft
+publish: false
+tags: []
 owners: [{{owner}}]
 sources: []
 generated:
-  tool: openclaw
-  skill: weekly
-  skill_version: null
+  tool: code-agent
+  model: null
   reviewed_by: null
 ---
 

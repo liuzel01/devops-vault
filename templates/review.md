@@ -2,13 +2,15 @@
 title: Review - {{title}}
 created: {{date}}
 updated: {{date}}
+type: review
 status: draft
+publish: false
+tags: []
 owners: [{{owner}}]
 sources: {{sources}}
 generated:
-  tool: openclaw
-  skill: review
-  skill_version: null
+  tool: code-agent
+  model: null
   reviewed_by: null
 ---
 

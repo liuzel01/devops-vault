@@ -1,5 +1,7 @@
 # OpenClaw 发布 Review Runbook
 
+> **已归档：** 本流程已于 2026-11-17 停用，不应继续执行。当前流程见 [Weekly 与 Review 的人工生成](../manual-weekly-and-review-generation.md)。
+
 本 Runbook 用于把一次可由团队维护的 Review 或事故复盘，从本地 OpenClaw 会话发布到本仓库的 `reviews/`，并创建 Draft PR。它是**人工触发**流程：不会由 `launchd` 自动生成、推送或合并 Review。
 
 ## 成功路径
@@ -106,7 +108,7 @@ node scripts/generate-review.mjs \
 sources/reviews/2026/2026-09-21-mgbx-cms-egress-proxy-ec2-review.md
 ```
 
-不要把“本机路径”写成已归档的仓库来源。完整源文档的规则见[数据分类与贡献规范](contributing-and-data-classification.md#脱敏完整归档)。将“源文档归档 + Review 生成”收敛为同一个受限命令是后续自动化项；在实现并验证前，仍需由人工在同一 Draft PR 中复核该源文档。
+不要把“本机路径”写成已归档的仓库来源。完整源文档的规则见[数据分类与贡献规范](../contributing-and-data-classification.md#脱敏完整归档)。将“源文档归档 + Review 生成”收敛为同一个受限命令是后续自动化项；在实现并验证前，仍需由人工在同一 Draft PR 中复核该源文档。
 
 ## 常见失败处理
 

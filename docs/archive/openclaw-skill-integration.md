@@ -1,5 +1,7 @@
 # OpenClaw Skill 集成边界
 
+> **已归档：** 本集成已于 2026-11-17 停用，仅供历史追溯。当前仓库不依赖 OpenClaw skill。
+
 当前本机的 `obsidian-daily-archive` skill 可正常使用，但它服务旧的个人 Obsidian Vault：它直接创建/更新 `Daily/`、`Wiki/`、`Weekly/`，并在 Daily 归档后默认刷新周报。不要把它直接配置为 `devops-vault` 的定时适配器，也不要在没有迁移设计的情况下改写其旧 Vault 路径。
 
 推荐新增独立的 `devops-vault-publish` skill，而非修改现有 skill。它应：
