@@ -5,7 +5,9 @@ import { relative, resolve, sep } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const requiredMetadataDirectories = new Set(['daily', 'weekly', 'reviews', 'sources', 'wiki']);
+const publishableDirectories = new Set(['reviews', 'weekly', 'wiki']);
 const validStatuses = new Set(['draft', 'review', 'published', 'archived']);
+const validPublishValues = new Set(['true', 'false']);
 const errors = [];
 
 const isMarkdown = (path) => path.endsWith('.md');
@@ -55,6 +57,20 @@ function validateMetadata(path, content) {
   }
   if (metadata.has('status') && !validStatuses.has(metadata.get('status'))) {
     errors.push(`${relativePath}: unsupported status '${metadata.get('status')}'`);
+  }
+  if (publishableDirectories.has(firstDirectory)) {
+    for (const key of ['type', 'publish', 'tags']) {
+      if (!metadata.has(key) || !metadata.get(key)) errors.push(`${relativePath}: missing publishing frontmatter field '${key}'`);
+    }
+    if (metadata.has('publish') && !validPublishValues.has(metadata.get('publish'))) {
+      errors.push(`${relativePath}: 'publish' must be true or false`);
+    }
+    if (metadata.get('publish') === 'true' && metadata.get('status') !== 'published') {
+      errors.push(`${relativePath}: publish: true requires status: published`);
+    }
+    if (metadata.get('status') === 'published' && metadata.get('publish') !== 'true') {
+      errors.push(`${relativePath}: status: published requires publish: true`);
+    }
   }
   if (relativePath.startsWith(`sources${sep}`)) {
     for (const key of ['source_kind', 'redaction', 'reviewed_by']) {
