@@ -24,3 +24,8 @@ Thumbs.db
 .tmp/
 tmp/
 coverage/
+node_modules/
+public/
+.quartz/
+.quartz-cache/
+tsconfig.tsbuildinfo

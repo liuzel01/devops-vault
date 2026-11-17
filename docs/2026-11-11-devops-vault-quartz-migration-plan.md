@@ -1,7 +1,7 @@
 # DevOps Vault：Review 知识库与 Quartz 发布实施计划
 
 > 计划日期：2026-11-11  
-> 状态：实施中（阶段一已完成，阶段二主体完成）
+> 状态：实施中（阶段一至阶段三已完成）
 > 目标仓库：`liuzel01/devops-vault`
 
 ## 1. 目标与最终决策
@@ -238,9 +238,9 @@ https://liuzel01.github.io/devops-vault/
 - [x] 更新 README、模板和 frontmatter 约定；
 - [x] 为现有 10 篇 Review 建立公开审核清单；
 - [x] 清理或归档 OpenClaw/launchd 文档和脚本；
-- [ ] 集成 Quartz，禁止私有目录进入网站；
+- [x] 集成 Quartz，禁止非发布目录进入网站；
 - [ ] 增加构建校验和 Pages workflow；
-- [ ] 本地构建并检查页面；
+- [x] 本地构建并检查页面；
 - [ ] 首次部署到 GitHub Pages；
 - [x] 从 Hugo 筛选并迁移少量文章；
 - [ ] 将后续 Review 流程切换为 Codex/Code Agent + Draft PR。

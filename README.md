@@ -50,4 +50,21 @@ Quartz 迁移目标和分阶段任务见 [Quartz 发布实施计划](docs/2026-1
 npm run validate
 ```
 
+## 本地网站构建
+
+Quartz 直接通过 `content/` 下的符号链接读取 `reviews/`、`weekly/` 和 `wiki/`，不维护第二份内容。只有 `publish: true` 的页面会进入构建产物。
+
+```bash
+npm ci
+npm run build:site
+```
+
+构建结果位于忽略提交的 `public/`。本地预览使用：
+
+```bash
+npm run preview:site
+```
+
+Quartz 配置、内容边界和升级方式见 [Quartz 维护说明](docs/quartz-maintenance.md)。
+
 旧 OpenClaw/launchd 流程仅作为历史资料保存在 [`docs/archive/`](docs/archive/README.md)，不再是当前工作流的一部分。
