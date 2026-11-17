@@ -7,10 +7,10 @@
 
 | Hugo 页面 | 目标页面 | 状态 |
 | --- | --- | --- |
-| `2023-07-15-k8s-kustomize/index.md` | `wiki/kubernetes/kustomize-practical-guide.md` | 等待人工确认 |
-| `2024-06-06-gcp-cloud-armor/index.md` | `wiki/gcp/cloud-armor-access-control.md` | 等待人工确认 |
+| `2023-07-15-k8s-kustomize/index.md` | `wiki/kubernetes/kustomize-practical-guide.md` | 已确认发布 |
+| `2024-06-06-gcp-cloud-armor/index.md` | `wiki/gcp/cloud-armor-access-control.md` | 已确认发布 |
 
-迁移页面已移除对旧博客图片和私有仓库示例的依赖，并按当前工具行为重新整理。确认内容后再设置 `status: published` 和 `publish: true`。
+迁移页面已移除对旧博客图片和私有仓库示例的依赖，按当前工具行为重新整理，并于 2026-11-17 确认发布。
 
 ## 暂不迁移
 

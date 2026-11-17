@@ -3,15 +3,15 @@ title: Google Cloud Armor 访问控制实践
 created: 2024-06-06
 updated: 2026-11-17
 type: wiki
-status: review
-publish: false
+status: published
+publish: true
 tags: [gcp, cloud-armor, waf, security, load-balancing]
 owners: [liuzel01]
 sources: ["legacy-hugo:2024-06-06-gcp-cloud-armor"]
 generated:
   tool: opencode
   model: gpt-5.6-sol
-  reviewed_by: null
+  reviewed_by: liuzel01
 ---
 
 # Google Cloud Armor 访问控制实践

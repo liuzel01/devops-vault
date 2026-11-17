@@ -3,15 +3,15 @@ title: Kubernetes Kustomize 实践指南
 created: 2023-07-15
 updated: 2026-11-17
 type: wiki
-status: review
-publish: false
+status: published
+publish: true
 tags: [kubernetes, kustomize, configuration, deployment]
 owners: [liuzel01]
 sources: ["legacy-hugo:2023-07-15-k8s-kustomize"]
 generated:
   tool: opencode
   model: gpt-5.6-sol
-  reviewed_by: null
+  reviewed_by: liuzel01
 ---
 
 # Kubernetes Kustomize 实践指南
