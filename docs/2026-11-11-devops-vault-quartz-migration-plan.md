@@ -242,7 +242,7 @@ https://liuzel01.github.io/devops-vault/
 - [ ] 增加构建校验和 Pages workflow；
 - [ ] 本地构建并检查页面；
 - [ ] 首次部署到 GitHub Pages；
-- [ ] 从 Hugo 筛选并迁移少量文章；
+- [x] 从 Hugo 筛选并迁移少量文章；
 - [ ] 将后续 Review 流程切换为 Codex/Code Agent + Draft PR。
 
 ## 10. 完成定义
