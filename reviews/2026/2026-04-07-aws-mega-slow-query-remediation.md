@@ -35,7 +35,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-07 AWS Mega 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-07-aws-mega-slow-query-remediation-review.md)。
+- 来源：`2026-04-07 AWS Mega 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-07-aws-mega-slow-query-remediation-review.md`）。
 - 证据包括实例监控覆盖结果、Lambda 与日志组对应关系、版本发布记录、订阅配置、参数基线及低风险操作边界。
 - 完整源档案保留原始结构，仅将凭据替换为具名变量；本页不复述密码、令牌、私钥或授权值。
 

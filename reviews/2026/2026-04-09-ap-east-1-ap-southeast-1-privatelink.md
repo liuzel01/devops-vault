@@ -29,7 +29,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-09 PrivateLink 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-09-ap-east-1-ap-southeast-1-privatelink-review.md)。
+- 来源：`2026-04-09 PrivateLink 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-09-ap-east-1-ap-southeast-1-privatelink-review.md`）。
 - 证据包括 CIDR 冲突、PrivateLink 资源状态、Target 健康、EKS 内 DNS/HTTP 验证和端口修复回归结果。
 - 完整源档案保留原始结构，仅将凭据替换为具名变量。
 

@@ -27,7 +27,7 @@ generated:
 ## 证据与来源
 
 - CMS 页面、分页及 CSS、JavaScript 静态资源验证通过。
-- 来源：[`2026-09-21 CMS 凭证脱敏源文档`](../../sources/reviews/2026/2026-09-21-mgbx-cms-egress-proxy-ec2-review.md)。该源文档按原始结构迁入公开仓库；密码、Token、私钥和认证材料已用具名变量替换。
+- 来源：`2026-09-21 CMS 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-09-21-mgbx-cms-egress-proxy-ec2-review.md`）。该源文档按原始结构迁入公开仓库；密码、Token、私钥和认证材料已用具名变量替换。
 
 ## 风险与后续行动
 

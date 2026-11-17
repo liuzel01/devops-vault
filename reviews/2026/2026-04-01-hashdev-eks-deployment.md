@@ -29,7 +29,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-01 Hashdev EKS 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-01-hashdev-eks-deployment-review.md)。
+- 来源：`2026-04-01 Hashdev EKS 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-01-hashdev-eks-deployment-review.md`）。
 - 关键证据包括 ConfigMap `Forbidden`、数据库字段不匹配、MongoDB `too many open connections`、xxl-job 注册时序问题及 AWS CNI IP 分配失败事件。
 - 完整源档案保留原始结构，仅将凭据替换为具名变量；本页不复述密码、令牌、私钥或授权值。
 

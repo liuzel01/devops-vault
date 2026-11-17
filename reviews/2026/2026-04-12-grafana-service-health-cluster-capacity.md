@@ -30,7 +30,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-12 Grafana 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-12-grafana-service-health-cluster-capacity-review.md)。
+- 来源：`2026-04-12 Grafana 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-12-grafana-service-health-cluster-capacity-review.md`）。
 - 来源记录了看板名称、UID、核心面板、查询口径、问题根因、修复方式及看板分工建议。
 - 完整源档案保留原始结构，仅将凭据替换为具名变量；本页不复述密码、令牌、私钥或授权值。
 

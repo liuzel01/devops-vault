@@ -29,7 +29,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-15 Hash PrometheusAlert 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-15-hash-prometheus-alerting-pipeline-template-optimization-review.md)。
+- 来源：`2026-04-15 Hash PrometheusAlert 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-15-hash-prometheus-alerting-pipeline-template-optimization-review.md`）。
 - 证据包括实施改动、验证记录、最终状态、配置同步和任务完成度评估。
 - 完整源档案保留原始结构，仅将凭据替换为具名变量。
 

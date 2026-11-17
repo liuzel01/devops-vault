@@ -29,7 +29,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-07 Kylin Admin 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-07-kylin-admin-ingress-parallel-deployment-review.md)。
+- 来源：`2026-04-07 Kylin Admin 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-07-kylin-admin-ingress-parallel-deployment-review.md`）。
 - 关键证据包括 Terraform 资源替换现象、Ingress webhook 拒绝记录、独立 Namespace/IngressClass 配置及资源状态。
 - 完整源档案保留原始结构，仅将凭据替换为具名变量。
 

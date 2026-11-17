@@ -28,7 +28,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-13 CLIProxyAPI 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-13-cliproxyapi-openclaw-main-integration-review.md)。
+- 来源：`2026-04-13 CLIProxyAPI 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-13-cliproxyapi-openclaw-main-integration-review.md`）。
 - 关键证据包括端口监听、模型列表、授权文件状态及默认模型切换后的对话验证。
 - 完整源档案保留原始结构；凭证值已替换为具名变量。
 

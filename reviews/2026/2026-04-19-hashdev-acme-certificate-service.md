@@ -29,7 +29,7 @@ generated:
 
 ## 证据与来源
 
-- 来源：[`2026-04-19 Hashdev ACME 凭证脱敏源文档`](../../sources/reviews/2026/2026-04-19-hashdev-acme-certificate-service-review.md)。
+- 来源：`2026-04-19 Hashdev ACME 凭证脱敏源文档`（仓库路径：`sources/reviews/2026/2026-04-19-hashdev-acme-certificate-service-review.md`）。
 - 证据包括 cert-manager Pod、ClusterIssuer、Certificate、CertificateRequest、Order、Challenge 与配置一致性核查。
 - 完整源档案保留原始结构，仅将凭据替换为具名变量。
 
