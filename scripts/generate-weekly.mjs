@@ -16,7 +16,7 @@ Options:
   --week YYYY-Www     ISO week, for example 2026-W39 (required)
   --date YYYY-MM-DD   Creation date (default: local today)
   --owner NAME        Frontmatter owner (default: local Git user.name)
-  --body-file PATH    Markdown body supplied by a reviewed OpenClaw skill output
+  --body-file PATH    Reviewed Markdown body supplied by a Code Agent or human
   --execute           Create a local agent branch, write the report, validate, and commit
   --push              Push the generated branch; requires --execute
   --create-pr         Create a draft GitHub PR; requires --execute --push and gh authentication

@@ -9,7 +9,8 @@ const root = resolve(import.meta.dirname, '..');
 function usage() {
   console.log(`Usage: node scripts/generate-review.mjs --title TITLE --slug SLUG [options]
 
-Reviews require an explicit human-initiated OpenClaw session. Default mode is dry-run.
+Reviews require explicit human review. Input may come from a Code Agent or manual editing.
+Default mode is dry-run.
 
 Options:
   --title TITLE       Review title (required)
@@ -17,7 +18,7 @@ Options:
   --date YYYY-MM-DD   Creation date (default: local today)
   --owner NAME        Frontmatter owner (default: local Git user.name)
   --source TEXT       Sanitized source reference stored in frontmatter
-  --body-file PATH    Markdown body supplied by a reviewed OpenClaw skill output
+  --body-file PATH    Reviewed Markdown body supplied by a Code Agent or human
   --execute           Create a local agent branch, write the review, validate, and commit
   --push              Push the generated branch; requires --execute
   --create-pr         Create a draft GitHub PR; requires --execute --push and gh authentication
