@@ -11,14 +11,17 @@ permissions:
 
 jobs:
   validate:
-    name: Markdown and metadata validation
+    name: Content and Quartz build validation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: npm run validate
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build:site
 
   secret-scan:
     name: Secret scan
