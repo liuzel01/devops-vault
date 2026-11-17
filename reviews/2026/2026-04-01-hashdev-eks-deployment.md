@@ -1,15 +1,17 @@
 ---
 title: Review - Hashdev EKS deployment retrospective
 created: 2026-09-26
-updated: 2026-09-26
-status: draft
+updated: 2026-11-17
+type: review
+status: published
+publish: true
+tags: [aws, eks, kubernetes, deployment, troubleshooting]
 owners: [liuzel01]
 sources: ["sources/reviews/2026/2026-04-01-hashdev-eks-deployment-review.md"]
 generated:
   tool: openclaw
-  skill: review
-  skill_version: null
-  reviewed_by: null
+  model: null
+  reviewed_by: liuzel01
 ---
 
 # Review - Hashdev EKS deployment retrospective

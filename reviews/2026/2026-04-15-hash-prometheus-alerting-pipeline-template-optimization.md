@@ -1,15 +1,17 @@
 ---
 title: Review - Hash Prometheus alerting pipeline and template optimization
 created: 2026-09-26
-updated: 2026-09-26
-status: draft
+updated: 2026-11-17
+type: review
+status: published
+publish: true
+tags: [prometheus, alertmanager, observability, alerting, kubernetes]
 owners: [liuzel01]
 sources: ["sources/reviews/2026/2026-04-15-hash-prometheus-alerting-pipeline-template-optimization-review.md"]
 generated:
   tool: openclaw
-  skill: review
-  skill_version: null
-  reviewed_by: null
+  model: null
+  reviewed_by: liuzel01
 ---
 
 # Review - Hash Prometheus alerting pipeline and template optimization

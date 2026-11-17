@@ -1,15 +1,17 @@
 ---
 title: Review - Cross-region PrivateLink
 created: 2026-09-26
-updated: 2026-09-26
-status: draft
+updated: 2026-11-17
+type: review
+status: published
+publish: true
+tags: [aws, privatelink, eks, networking, troubleshooting]
 owners: [liuzel01]
 sources: ["sources/reviews/2026/2026-04-09-ap-east-1-ap-southeast-1-privatelink-review.md"]
 generated:
   tool: openclaw
-  skill: review
-  skill_version: null
-  reviewed_by: null
+  model: null
+  reviewed_by: liuzel01
 ---
 
 # Review - Cross-region PrivateLink

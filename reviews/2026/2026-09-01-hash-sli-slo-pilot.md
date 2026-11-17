@@ -1,15 +1,17 @@
 ---
 title: Review - Hash SLI/SLO pilot review
 created: 2026-09-01
-updated: 2026-09-01
-status: draft
+updated: 2026-11-17
+type: review
+status: published
+publish: true
+tags: [sli, slo, prometheus, grafana, observability]
 owners: [liuzel01]
 sources: ["sources/reviews/2026/2026-09-01-hash-sli-slo-pilot-review.md"]
 generated:
   tool: openclaw
-  skill: review
-  skill_version: null
-  reviewed_by: null
+  model: null
+  reviewed_by: liuzel01
 ---
 
 # Review - Hash SLI/SLO pilot review

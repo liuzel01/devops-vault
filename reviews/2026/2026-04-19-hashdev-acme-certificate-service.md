@@ -1,15 +1,17 @@
 ---
 title: Review - Hashdev ACME certificate service
 created: 2026-09-26
-updated: 2026-09-26
-status: draft
+updated: 2026-11-17
+type: review
+status: published
+publish: true
+tags: [kubernetes, cert-manager, acme, route53, tls]
 owners: [liuzel01]
 sources: ["sources/reviews/2026/2026-04-19-hashdev-acme-certificate-service-review.md"]
 generated:
   tool: openclaw
-  skill: review
-  skill_version: null
-  reviewed_by: null
+  model: null
+  reviewed_by: liuzel01
 ---
 
 # Review - Hashdev ACME certificate service
