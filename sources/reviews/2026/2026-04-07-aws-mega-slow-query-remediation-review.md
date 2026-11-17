@@ -1,7 +1,7 @@
 ---
 title: AWS Mega slow-query remediation review
 created: 2026-04-07
-updated: 2026-09-26
+updated: 2026-11-17
 status: archived
 owners: [liuzel01]
 sources: ["local OpenClaw workspace review, migrated to this repository"]
@@ -44,7 +44,7 @@ reviewed_by: liuzel01
 - RDS 实例：`meganew`（MySQL）
 - 慢日志组：`/aws/rds/instance/meganew/slowquery`
 - 订阅目标：Lambda `mega-rds-lark`
-- 当前 webhook（函数内/环境变量）：`/open-apis/bot/v2/hook/e98b3504-2194-4438-b137-b053625c3226`
+- 当前 webhook（函数内/环境变量）：`<LARK_WEBHOOK_PATH_REDACTED>`
 
 ### `mega-rds-lark` 本次优化
 - Phase 1 已上线：
@@ -74,8 +74,8 @@ reviewed_by: liuzel01
 
 ## webhook 路由
 - repl: 维持原 webhook
-- kline: `https://open.larksuite.com/open-apis/bot/v2/hook/3f082184-7155-4b1b-b5cc-0a2efd51219c`
-- data: `https://open.larksuite.com/open-apis/bot/v2/hook/ea9fcb32-6daa-46ff-b515-6de046046a93`
+- kline: `<LARK_WEBHOOK_URL_REDACTED>`
+- data: `<LARK_WEBHOOK_URL_REDACTED>`
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Hash Prometheus alerting pipeline and template optimization review
 created: 2026-04-15
-updated: 2026-09-26
+updated: 2026-11-17
 status: archived
 owners: [liuzel01]
 sources: ["local OpenClaw workspace review, migrated to this repository"]
@@ -63,7 +63,7 @@ reviewed_by: liuzel01
 
 - `open-feishu=1`（保留）
 - `fsurl` 更新为新 webhook：
-  - `https://open.larksuite.com/open-apis/bot/v2/hook/89ad8801-6c43-4279-8eef-6a152917ea9e`
+  - `<LARK_WEBHOOK_URL_REDACTED>`
 - 关闭非必要通道：
   - `open-dingding=0`
   - `open-weixin=0`
